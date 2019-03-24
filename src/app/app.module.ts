@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { CourseComponent } from './course.component';
 import { CoursesService } from './courses.service';
 import { SummaryPipe } from './summary.pipe';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 @NgModule({
   declarations: [
     AppComponent,
     SummaryPipe,
-    CourseComponent
+    CourseComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
