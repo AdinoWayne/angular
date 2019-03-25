@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { PaneComponent } from './pane/pane.component';
 import { PostComponent } from './post/post.component';
+import { PostService } from './services/post.service';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { PostComponent } from './post/post.component';
     HttpModule
   ],
   providers: [
+    PostService
   ],
   bootstrap: [AppComponent]
 })

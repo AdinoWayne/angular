@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+##OnInit Interface 
+have ngOnInit() : void { }
+##Separation of Concerns
+Component -> Service -> Backend
+## Extracting a Service
+ng g s serives -> Depen Inject services in component reasons clearn and encapsulation

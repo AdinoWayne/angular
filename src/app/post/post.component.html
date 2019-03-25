@@ -2,7 +2,13 @@
 (keyup.enter)="createPost(title)" #title
 type="text" class="form-control">
 <ul>
-  <li *ngFor="let el of post" class="list-group-item">
-        {{ el?.title }}
+  <li *ngFor="let el of post" class="list-group-item"> 
+  <button 
+  (click)="updatePost(el)"
+  class="btn btn-primary btn-sm">Update</button>
+  <button
+  (click)="deletePost(el)"
+   class="btn btn-error btn-sm">Delete</button>    
+  {{ el?.title }}
   </li>
 </ul>
