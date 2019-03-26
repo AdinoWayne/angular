@@ -1,7 +1,7 @@
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FavoriteComponent } from './favorite/favorite.component';
@@ -23,7 +23,7 @@ import { PostService } from './services/post.service';
     HttpModule
   ],
   providers: [
-    PostService
+    PostService,
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../services/post.service';
+import { AppError, NotFoundError } from '../common/app-error-handle';
 
 @Component({
   selector: 'app-post',
@@ -9,47 +10,46 @@ import { PostService } from '../services/post.service';
 export class PostComponent implements OnInit {
   post: any[];
   constructor(private service: PostService) {
-    this.service.getPosts()
-    .subscribe(response => {
-      this.post = response.json()
-    })
   }
 
   createPost(input: HTMLInputElement) {
     let post = { title: input.value };
+    this.post.splice(0, 0, post);
     input.value ='';
-    this.service.createPosts(post)
-    .subscribe(res => {
-      post['id'] = res.json().id;
-      this.post.splice(0, 0, post)
+    this.service.create(post)
+    .subscribe(newPost => {
+      post['id'] = newPost.id;
+    }, (error: AppError) => {
+      this.post.splice(0, 1)
+
     })
   }
 
   updatePost(post) {
-    this.service.updatePosts(post)
+    this.service.update(post)
     .subscribe(res => {
-      console.log(res.json())
+      console.log(res)
     })
   }
 
   deletePost(el) {
-    this.service.deletePosts(el)
-    .subscribe(() => {
-      let index = this.post.indexOf(el);
-      this.post.splice(index, 1);
+    let index = this.post.indexOf(el);
+    this.post.splice(index, 1);
+    this.service.delete(el)
+    .subscribe(null, (error: AppError) => {
+      this.post.splice(index, 0, el)
+      if (error instanceof NotFoundError)
+        alert('this post has already been deleted. ')
     })
   }
 
   ngOnInit() {
-    this.service.getPosts()
-    .subscribe(res => {
-      this.post = res.json();
-    }, (err: Response) => {
+    this.service.getAll()
+    .subscribe(res => { this.post = res }, (err: Response) => {
       if (err.status === 404){
         alert('This post has already been deleted')
       } else {
-        alert('An Unexpected error occurred.');
-        console.log(err);
+        alert('An Unexpected error occurred.')
       }
     })
   }
