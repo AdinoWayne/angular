@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { catchError, map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { AppError, NotFoundError } from '../common/app-error-handle';
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class DataService {
     )
   }
   create(resource) {
-    //   return Observable.throw(new AppError())
+    // return throwError(new AppError())
     return this.http.post(this.url, JSON.stringify(resource))
     .pipe(
         map(response => response.json()),
@@ -39,9 +39,9 @@ export class DataService {
   }
   private handleError(error: Response) {
     if(error.status === 404) {
-      return Observable.throw(new NotFoundError(error.json()));
+      return throwError(new NotFoundError(error.json()));
     } else {
-      return Observable.throw(new AppError(error))
+      return throwError(new AppError(error))
     }
   }
 }
