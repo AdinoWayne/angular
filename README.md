@@ -45,6 +45,6 @@ Prefer observable.
 They allow reactive programing.  
 They provide a bunch of useful operators.  
 Observable is lazy.  
-##routerLink
-  <a routerLink="/url"></a>  
-  <a [routerLink]="['url', url.id ]"></a>
+## routerLink
+<a routerLink="/url"></a>  
+<a [routerLink]="['url', url.id ]"></a>
