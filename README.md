@@ -26,13 +26,13 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 ## Command Line Frontend (working)
-yarn doc
-ng build --prod
-git commit -m "[add] describe"
-git push
-git push --set-upstreams origin <branch>
-git pull
-git checkout issue
+yarn doc  
+ng build --prod  
+git commit -m "[add] describe"  
+git push  
+git push --set-upstreams origin <branch>  
+git pull  
+git checkout issue  
 ## OnInit Interface 
 have ngOnInit() : void { }
 ## Separation of Concerns
@@ -40,8 +40,11 @@ Component -> Service -> Backend
 ## Extracting a Service
 ng g s serives -> Depen Inject services in component reasons clearn and encapsulation
 ## Observable vs Promises
-You can convert observable to promise.
-Prefer observable.
-They allow reactive programing.
-They provide a bunch of useful operators.
-Observable is lazy.
+You can convert observable to promise.  
+Prefer observable.  
+They allow reactive programing.  
+They provide a bunch of useful operators.  
+Observable is lazy.  
+##routerLink
+  <a routerLink="/url"></a>  
+  <a [routerLink]="['url', url.id ]"></a>
