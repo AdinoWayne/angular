@@ -39,3 +39,9 @@ have ngOnInit() : void { }
 Component -> Service -> Backend
 ## Extracting a Service
 ng g s serives -> Depen Inject services in component reasons clearn and encapsulation
+## Observable vs Promises
+You can convert observable to promise.
+Prefer observable.
+They allow reactive programing.
+They provide a bunch of useful operators.
+Observable is lazy.
