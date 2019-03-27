@@ -19,7 +19,11 @@ describe('ContactFormComponent', () => {
     fixture.detectChanges();
   });
 
+<<<<<<< HEAD
   it('should be created', () => {
+=======
+  it('should create', () => {
+>>>>>>> 356e2184bbf3eccec52e2b85caee288044297e5c
     expect(component).toBeTruthy();
   });
 });
