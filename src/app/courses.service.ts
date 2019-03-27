@@ -1,6 +1,6 @@
 
 export class CoursesService {
-    getCourse() {
-        return ["Riven","Yasou","Irelia"];
+    getCourses() {
+        return ["course1", "course2", "course3"];
     }
 }
