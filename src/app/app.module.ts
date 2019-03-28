@@ -12,7 +12,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule, ErrorHandler } from '@angular/core';
 
 import { AppComponent } from './app.component';
-<<<<<<< HEAD
 import { CourseComponent } from './course/course.component';
 import { AuthorsComponent } from './authors/authors.component';
 import { FavoriteComponent } from './favorite/favorite.component';
@@ -32,12 +31,6 @@ import { HomeComponent } from './home/home.component';
 import { GithubProfileComponent } from './github-profile/github-profile.component';
 import { NotFoundComponent } from './not-found/not-found.component'; 
 
-=======
-import { CourseComponent } from './course.component';
-import { CoursesService } from './courses.service';
-import { SummaryPipe } from './summary.pipe';
-import { ContactFormComponent } from './contact-form/contact-form.component';
->>>>>>> 356e2184bbf3eccec52e2b85caee288044297e5c
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +39,6 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     CoursesComponent,
     AuthorsComponent,
     SummaryPipe,
-<<<<<<< HEAD
     FavoriteComponent,
     PanelComponent,
     InputFormatDirective,
@@ -62,10 +54,6 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     HomeComponent,
     GithubProfileComponent,
     NotFoundComponent,
-=======
-    CourseComponent,
-    ContactFormComponent
->>>>>>> 356e2184bbf3eccec52e2b85caee288044297e5c
   ],
   imports: [
     BrowserModule,
